@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الزهراني للتبريد والتكييف</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(45deg, #00bcd4, #009688);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin: 0;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        header p {
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav button {
+            padding: 10px 20px;
+            border: 2px solid #00bcd4;
+            background-color: #333;
+            color: white;
+            font-size: 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        nav button:hover {
+            background-color: #00bcd4;
+            color: #fff;
+        }
+
+        .welcome-message {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 20px auto;
+            background: #009688;
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 80%;
+            animation: fadeInScale 1s ease-out;
+        }
+
+        .section {
+            display: none;
+            padding: 20px;
+            margin: auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            min-height: 300px; /* تثبيت الارتفاع */
+            width: 90%; /* جعل العرض متجاوب */
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: auto;
+        }
+
+        /* تأثيرات الرسالة الترحيبية */
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .service-details {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .service-details h3 {
+            color: #00bcd4;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .keywords span {
+            background-color: #00bcd4;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* زر واتساب العائم */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 24px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+
+        /* إضافة كود CSS الجديد لإخفاء الشريط */
+        #navbar, .header, .footer {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>الزهراني للتبريد والتكييف</h1>
+        <p>حلول تكييف مبتكرة تجعل حياتك أسهل وأفضل</p>
+    </header>
+    <nav>
+        <button onclick="showSection('maintenance')">صيانة المكيفات</button>
+        <button onclick="showSection('installation')">تركيب المكيفات</button>
+        <button onclick="showSection('cleaning')">تنظيف المكيفات</button>
+    </nav>
+    <main>
+        <div class="welcome-message">
+            <h2>مرحبًا بكم في الزهراني للتبريد والتكييف</h2>
+            <p>نسعى دائمًا لتقديم أفضل الخدمات التي تجعل حياتكم مريحة وأكثر برودة.</p>
+        </div>
+        <div id="maintenance" class="section">
+            <h2>صيانة المكيفات</h2>
+            <p>نقدم خدمات صيانة شاملة للمكيفات باستخدام أحدث الأدوات لضمان أداء مستدام.</p>
+            <div class="service-details">
+                <h3>تفاصيل الخدمة</h3>
+                <p>صيانة المكيفات هي عملية مستمرة لضمان أن تظل المكيفات تعمل بكفاءة عالية طوال العام. تشمل الصيانة تنظيف الفلاتر، فحص مستويات الغاز، والتحقق من الكفاءة العامة للمكيف. يجب إجراء صيانة منتظمة للمكيفات لضمان الحفاظ على أدائها الأمثل، وهذا سيساعد في تقليل استهلاك الطاقة وتجنب المشاكل المحتملة.</p>
+                <p>كما تشمل الصيانة فحص وتغيير الأجزاء التالفة مثل المحركات أو الوحدات الكهربائية، مما يساهم في زيادة عمر الجهاز وكفاءة عمله. يتم ذلك بواسطة فنيين متخصصين لضمان تقديم خدمة مهنية وعالية الجودة.</p>
+                <p>كلمات مفتاحية: صيانة المكيفات، تنظيف الفلاتر، صيانة فنية للمكيفات، كفاءة التبريد، مصلح مكيفات، صيانة دورية للمكيفات، جهاز التكييف، خدمة المكيفات، تصليح المكيفات.</p>
+            </div>
+        </div>
+        <div id="installation" class="section">
+            <h2>تركيب المكيفات</h2>
+            <p>نوفر خدمات تركيب احترافية مع ضمان الجودة والكفاءة.</p>
+            <div class="service-details">
+                <h3>تفاصيل الخدمة</h3>
+                <p>تركيب المكيفات يتم بواسطة فنيين محترفين لضمان أن جميع الأجهزة مثبتة بشكل صحيح وآمن. نحن نستخدم أفضل الأساليب لتحديد الموقع المثالي للمكيف والتأكد من أن التوصيلات الكهربائية والتدفق الهوائي يعملان بكفاءة عالية. عملية التركيب تهدف إلى توفير أفضل أداء للمكيف وتحقيق أقصى استفادة من التبريد.</p>
+                <p>تشمل الخدمة تحديد موقع المكيف بدقة بناءً على احتياجات المكان، بالإضافة إلى تركيب الأنابيب اللازمة والتأكد من عزل الوحدات بشكل صحيح لمنع تسرب الهواء.</p>
+                <p>كلمات مفتاحية: تركيب المكيفات، تركيب تكييف مركزي، تركيب تكييف سبليت، تركيب تكييف نافذة، تركيب أجهزة التبريد، تركيب مكيفات هواء، تركيب مكيفات مع ضمان، تكييفات منزلية، تثبيت المكيفات، خدمات التركيب.</p>
+            </div>
+        </div>
+        <div id="cleaning" class="section">
+            <h2>تنظيف المكيفات</h2>
+            <p>نقوم بتنظيف المكيفات باستخدام أحدث التقنيات لضمان أداء فائق وكفاءة مثالية.</p>
+            <div class="service-details">
+                <h3>تفاصيل الخدمة</h3>
+                <p>تنظيف المكيفات هو عملية هامة لضمان أن المكيف يعمل بكفاءة، حيث أن تراكم الأتربة والشوائب في المكيف يمكن أن يسبب مشاكل في الأداء. يتم تنظيف الفلاتر، الأجزاء الداخلية للمكيف، والتأكد من عدم وجود أي تراكمات تؤثر على الأداء. هذه الخدمة تساعد في الحفاظ على نظافة الهواء داخل المكان وتعمل على تحسين كفاءة استهلاك الطاقة.</p>
+                <p>نحن نستخدم تقنيات تنظيف متطورة تشمل تعقيم الفلاتر والأجزاء الداخلية، مما يساعد في منع تكون الروائح الكريهة والحفاظ على الهواء النقي في المكان.</p>
+                <p>كلمات مفتاحية: تنظيف المكيفات، تنظيف فلاتر التكييف، تنظيف أجهزة التبريد، صيانة التكييفات، تنظيف المكيفات في المنزل، تنظيف مكيفات الهواء، تنظيف التكييفات بطريقة احترافية، الحفاظ على المكيف، تنظيف أنظمة التكييف، تنظيف فلاتر هواء المكيف.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>الزهراني للتبريد والتكييف | جميع الحقوق محفوظة © 2025</p>
+    </footer>
+
+    <a href="https://wa.me/966575705508" class="whatsapp-btn" target="_blank">واتساب</a>
+
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+</html>
